@@ -1,0 +1,3 @@
+Principal developers:
+
+  Marco Raveri (mraveri@uchicago.edu), University of Chicago, KICP
