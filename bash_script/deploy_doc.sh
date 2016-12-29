@@ -35,10 +35,10 @@ source $SCRIPT_PATH/error_check.sh
 
 # definitions:
 
-SOURCE_BRANCH="master"
+SOURCE_BRANCH="f2kquadpack"
 TARGET_BRANCH="gh-pages"
 DOC_FOLDER=$SCRIPT_PATH/../documentation/doxygen_doc/html
-SSH_KEY=Travis_f2k
+SSH_KEY=Travis_f2kquadpack
 
 # run everything:
 

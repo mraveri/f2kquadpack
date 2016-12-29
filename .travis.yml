@@ -19,7 +19,7 @@ before_install:
 
 env:
   global:
-  - ENCRYPTION_LABEL: "4ac21ce75876"
+  - ENCRYPTION_LABEL: "7fca98f818b5"
   - COMMIT_AUTHOR_EMAIL: "mraveri@sissa.it"
 
 script:
@@ -30,5 +30,4 @@ script:
   - kill $TIME_PID
 
 after_success:
-  - docker run -v $(pwd):$(pwd) -e ENCRYPTION_LABEL -e encrypted_4ac21ce75876_key -e encrypted_4ac21ce75876_iv -e COMMIT_AUTHOR_EMAIL -e TRAVIS_PULL_REQUEST -e TRAVIS_BRANCH -t mraveri/travis_box /bin/sh -c "cd $(pwd) ; bash $(pwd)/bash_script/deploy_doc.sh "
-  
+  - docker run -v $(pwd):$(pwd) -e ENCRYPTION_LABEL -e encrypted_7fca98f818b5_key -e encrypted_7fca98f818b5_iv -e COMMIT_AUTHOR_EMAIL -e TRAVIS_PULL_REQUEST -e TRAVIS_BRANCH -t mraveri/travis_box /bin/sh -c "cd $(pwd) ; bash $(pwd)/bash_script/deploy_doc.sh "

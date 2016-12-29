@@ -1,10 +1,10 @@
 
-This directory contains the f2k code.
+This directory contains the f2kquadpack code.
 
-The f2k code is copyrighted by the f2k authors.
+The f2kquadpack code is copyrighted by the f2kquadpack authors.
 This term refers to the people listed in the file contributors.txt.
 
-The f2k code is free software;
+The f2kquadpack code is free software;
 you can use it, redistribute it, and/or modify it under the terms
 of the GNU General Public License as published by the Free Software Foundation;
 either version 3 of the License, or (at your option) any later version.
@@ -16,13 +16,13 @@ The full text of the GNU General Public version 3 is quoted below.
 Contributions:
 
 As a contributor to this project, you agree that any of your contributions be
-licensed under the same terms and conditions as the license of the f2k
+licensed under the same terms and conditions as the license of the f2kquadpack
 project granted to you.
 
-The f2k project does not require copyright assignments for contributions.
-This means that the copyright for code contributions in the f2k project
+The f2kquadpack project does not require copyright assignments for contributions.
+This means that the copyright for code contributions in the f2kquadpack project
 is held by its respective contributors who have each agreed to release their
-contributed code under the terms of the f2k license.
+contributed code under the terms of the f2kquadpack license.
 
 --------------------------------------------------------------------------------
 
