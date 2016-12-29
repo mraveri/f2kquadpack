@@ -14,9 +14,15 @@
 #----------------------------------------------------------------------------------------
 
 #
-# main gitignore file
+# This file contains the definition of a function that checks for succesfull completion
+# of commands
 #
 
-*.DS_STORE
-build
-.project
+function valid() {
+  if [ $? -ne 0 ]; then
+        echo 'ERROR'
+        echo $1
+        exit 1
+  fi
+}
+
