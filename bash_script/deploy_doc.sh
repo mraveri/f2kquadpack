@@ -38,6 +38,7 @@ source $SCRIPT_PATH/error_check.sh
 SOURCE_BRANCH="master"
 TARGET_BRANCH="gh-pages"
 DOC_FOLDER=$SCRIPT_PATH/../documentation/doxygen_doc
+SSH_KEY=Travis_f2k
 
 # run everything:
 
@@ -96,10 +97,10 @@ ENCRYPTED_KEY_VAR="encrypted_${ENCRYPTION_LABEL}_key"
 ENCRYPTED_IV_VAR="encrypted_${ENCRYPTION_LABEL}_iv"
 ENCRYPTED_KEY=${!ENCRYPTED_KEY_VAR}
 ENCRYPTED_IV=${!ENCRYPTED_IV_VAR}
-openssl aes-256-cbc -K $ENCRYPTED_KEY -iv $ENCRYPTED_IV -in $SCRIPT_PATH/Travis_f2k.enc -out ~/.ssh/Travis_f2k -d
-chmod 600 ~/.ssh/Travis_f2k
+openssl aes-256-cbc -K $ENCRYPTED_KEY -iv $ENCRYPTED_IV -in $SCRIPT_PATH/$SSH_KEY.enc -out ~/.ssh/$SSH_KEY -d
+chmod 600 ~/.ssh/$SSH_KEY
 eval `ssh-agent -s`
-ssh-add ~/.ssh/Travis_f2k
+ssh-add ~/.ssh/$SSH_KEY
 ssh-keyscan -t rsa github.com > ~/.ssh/known_hosts
 
 # Now that we're all set up, we can push.
