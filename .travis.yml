@@ -1,7 +1,6 @@
 all_branches: true
 
 language:
-  fortran
   sh
   python
 
@@ -12,8 +11,14 @@ sudo: required
 
 cache: apt
 
+services:
+  - docker
+
+before_install:
+  - docker pull mraveri/travis_box
+
 script:
   - while true; do echo 'Travis do not sleep!'; sleep 300s; done &
   - TIME_PID=$!
-  - make all
+  - docker run -v $(pwd):$(pwd) -e TRAVIS -t mraveri/travis_box /bin/sh -c "cd $(pwd) ; make all"
   - kill $TIME_PID
