@@ -17,8 +17,17 @@ services:
 before_install:
   - docker pull mraveri/travis_box
 
+env:
+  global:
+  - ENCRYPTION_LABEL: "4ac21ce75876"
+  - COMMIT_AUTHOR_EMAIL: "mraveri@sissa.it"
+
 script:
   - while true; do echo 'Travis do not sleep!'; sleep 300s; done &
   - TIME_PID=$!
   - docker run -v $(pwd):$(pwd) -e TRAVIS -t mraveri/travis_box /bin/sh -c "cd $(pwd) ; make all"
   - kill $TIME_PID
+
+after_success:
+  - docker run -v $(pwd):$(pwd) -e ENCRYPTION_LABEL -e encrypted_4ac21ce75876_key -e encrypted_4ac21ce75876_iv -e COMMIT_AUTHOR_EMAIL -e TRAVIS_PULL_REQUEST -e TRAVIS_BRANCH -t mraveri/travis_box /bin/sh -c "cd $(pwd) ; bash $(pwd)/bash_script/deploy_doc.sh "
+  

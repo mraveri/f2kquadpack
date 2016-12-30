@@ -96,10 +96,10 @@ ENCRYPTED_KEY_VAR="encrypted_${ENCRYPTION_LABEL}_key"
 ENCRYPTED_IV_VAR="encrypted_${ENCRYPTION_LABEL}_iv"
 ENCRYPTED_KEY=${!ENCRYPTED_KEY_VAR}
 ENCRYPTED_IV=${!ENCRYPTED_IV_VAR}
-openssl aes-256-cbc -K $ENCRYPTED_KEY -iv $ENCRYPTED_IV -in $SCRIPT_PATH/id_rsa.enc -out ~/.ssh/id_rsa -d
-chmod 600 ~/.ssh/id_rsa
+openssl aes-256-cbc -K $ENCRYPTED_KEY -iv $ENCRYPTED_IV -in $SCRIPT_PATH/Travis_f2k.enc -out ~/.ssh/Travis_f2k -d
+chmod 600 ~/.ssh/Travis_f2k
 eval `ssh-agent -s`
-ssh-add ~/.ssh/id_rsa
+ssh-add ~/.ssh/Travis_f2k
 ssh-keyscan -t rsa github.com > ~/.ssh/known_hosts
 
 # Now that we're all set up, we can push.

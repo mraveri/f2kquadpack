@@ -32,6 +32,12 @@ module f2k_timer
 
     !----------------------------------------------------------------------------------------
     !> This is the main timer class. The timer works in seconds.
+    !!
+    !! @author    Marco Raveri
+    !! @version   1.0
+    !! @date      Dec 2016
+    !! @copyright GNU Public License v3
+    !!
     type, public :: timer
 
         real    ( kind=8 ), public :: start_time          !< timer begin time
