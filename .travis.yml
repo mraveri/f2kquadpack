@@ -1,0 +1,19 @@
+all_branches: true
+
+language:
+  fortran
+  sh
+  python
+
+python:
+  - "2.7"
+
+sudo: required
+
+cache: apt
+
+script:
+  - while true; do echo 'Travis do not sleep!'; sleep 300s; done &
+  - TIME_PID=$!
+  - make all
+  - kill $TIME_PID
