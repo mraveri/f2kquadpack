@@ -48,11 +48,11 @@ printf " TRAVIS_PULL_REQUEST: %s\n" "$TRAVIS_PULL_REQUEST"
 printf " TRAVIS_BRANCH      : %s\n" "$TRAVIS_BRANCH"
 
 # Pull requests and commits to other branches shouldn't try to deploy, just build to verify
-if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]; then
-	printf "${Green} The current branch is: %s${Color_Off}\n" "$TRAVIS_BRANCH"
-	printf "${Green} This branch is not allowed to automatically deploy the documentation.${Color_Off}\n"
-    exit 0
-fi
+#if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]; then
+	#	printf "${Green} The current branch is: %s${Color_Off}\n" "$TRAVIS_BRANCH"
+	#printf "${Green} This branch is not allowed to automatically deploy the documentation.${Color_Off}\n"
+    #exit 0
+#fi
 
 # create an out folder:
 mkdir out

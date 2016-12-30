@@ -9,4 +9,6 @@ The idea is to compile the old code and its new version as libraries.
 Then compile a set of tests against the two libraries and run them to make sure that the
 code is doing things right and efficiently.
 
+The automatic documentation of the code is available at https://mraveri.github.io/f2k/
+
 Now the code is in the first stages of development.
