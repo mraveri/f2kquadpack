@@ -37,7 +37,7 @@ source $SCRIPT_PATH/error_check.sh
 
 SOURCE_BRANCH="master"
 TARGET_BRANCH="gh-pages"
-DOC_FOLDER=$SCRIPT_PATH/../documentation/doxygen_doc
+DOC_FOLDER=$SCRIPT_PATH/../documentation/doxygen_doc/html
 SSH_KEY=Travis_f2k
 
 # run everything:
