@@ -17,6 +17,9 @@
 # This file contains the definition of a function that checks for succesfull completion
 # of commands
 #
+#
+# Developed by: Marco Raveri (mraveri@uchicago.edu)
+#
 
 function valid() {
   if [ $? -ne 0 ]; then

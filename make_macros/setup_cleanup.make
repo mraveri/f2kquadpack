@@ -40,8 +40,11 @@ add_code_build_directories: build_directory
 
 # clean targets:
 
-clean:
+clean: clean_documentation
 	@rm -rf $(BUILD_DIR)
+	
+clean_documentation:
+	@rm -rf $(DOC_BUILD)/*
 
 clean_old_library:
 	@rm -rf $(OLD_BUILD)

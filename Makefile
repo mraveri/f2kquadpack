@@ -35,7 +35,8 @@ all: \
 	old_library \
 	new_library \
 	add_library \
-	test
+	test \
+	documentation
 
 ################### old library build   ########################################
 
@@ -138,3 +139,10 @@ $(NEW_LIB_TEST)/%.x: $(TEST_DIR)/%.f90 new_code_build_directories add_library ne
 .PHONY: test
 
 test: $(TEST_SOURCES_TARGETS)
+
+################### documentation         ######################################
+
+.PHONY: documentation
+
+documentation:
+	@cd $(DOC_DIR) && doxygen doxyfile

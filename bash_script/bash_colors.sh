@@ -18,6 +18,9 @@
 # Taken almost exactly from:
 #  https://wiki.archlinux.org/index.php/Color_Bash_Prompt_(Italiano)
 #
+#
+# Developed by: Marco Raveri (mraveri@uchicago.edu)
+#
 
 # Reset
 Color_Off='\e[0m'       # Text Reset

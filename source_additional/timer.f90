@@ -25,18 +25,14 @@ module f2k_timer
 
     implicit none
 
-    private
-
-    public timer
-
     !----------------------------------------------------------------------------------------
     ! Internal definitions:
 
-    integer, parameter :: allocated_num_loops = 50 ! number of elements to allocate temporarily arrays. If length exceeds this number then another chunk of this length is allocated.
+    integer, private, parameter :: allocated_num_loops = 50 ! number of elements to allocate temporarily arrays. If length exceeds this number then another chunk of this length is allocated.
 
     !----------------------------------------------------------------------------------------
     !> This is the main timer class. The timer works in seconds.
-    type :: timer
+    type, public :: timer
 
         real    ( kind=8 ), public :: start_time          !< timer begin time
         real    ( kind=8 ), public :: end_time            !< timer end time
@@ -50,15 +46,15 @@ module f2k_timer
 
     contains
 
-        procedure :: start        => timer_start    !< subroutine that starts the timer.
-        procedure :: stop         => timer_stop     !< subroutine that stops the timer.
-        procedure :: loop         => timer_loop     !< subroutine that records intermediate times (loops).
-        procedure :: average      => timer_average  !< function that gives the average loop time.
-        procedure :: variance     => timer_variance !< function that gives the variance of the loop time.
-        procedure :: elapsed_time => timer_elapsed  !< function that returns the elapsed time, defined as (end_time-start_time)
-        procedure :: reset        => timer_reset    !< subroutine that resets the timer.
-        procedure :: wait         => timer_wait     !< subroutine that waits a number of seconds.
-        procedure :: time         => timer_time     !< function that takes the time.
+        procedure, public :: start        => timer_start    !< subroutine that starts the timer.
+        procedure, public :: stop         => timer_stop     !< subroutine that stops the timer.
+        procedure, public :: loop         => timer_loop     !< subroutine that records intermediate times (loops).
+        procedure, public :: average      => timer_average  !< function that gives the average loop time.
+        procedure, public :: variance     => timer_variance !< function that gives the variance of the loop time.
+        procedure, public :: elapsed_time => timer_elapsed  !< function that returns the elapsed time, defined as (end_time-start_time)
+        procedure, public :: reset        => timer_reset    !< subroutine that resets the timer.
+        procedure, public :: wait         => timer_wait     !< subroutine that waits a number of seconds.
+        procedure, public :: time         => timer_time     !< function that takes the time.
 
     end type timer
 

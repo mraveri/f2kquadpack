@@ -24,10 +24,12 @@ NEW_SOURCE_DIR  := $(PROJECT_DIR)/source_new
 OLD_SOURCE_DIR  := $(PROJECT_DIR)/source_old
 ADD_SOURCE_DIR  := $(PROJECT_DIR)/source_additional
 TEST_DIR        := $(PROJECT_DIR)/test
+DOC_DIR         := $(PROJECT_DIR)/documentation
 
 # build folders:
 
 BUILD_DIR=$(PROJECT_DIR)/build
+DOC_BUILD=$(DOC_DIR)/doxygen_doc
 
 OLD_BUILD         := $(BUILD_DIR)/old_library
 OLD_BUILD_OBJ_DIR := $(OLD_BUILD)/build
