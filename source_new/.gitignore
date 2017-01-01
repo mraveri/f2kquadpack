@@ -1,0 +1,3 @@
+# This is a blank gitignore that ignores everything but itself.
+*
+!.gitignore
