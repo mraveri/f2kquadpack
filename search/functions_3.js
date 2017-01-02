@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['reset',['reset',['../structf2k__timer_1_1timer.html#aaab4196857f9ff36c71ff204b193d399',1,'f2k_timer::timer']]]
+  ['loop',['loop',['../structf2k__timer_1_1timer.html#a590c707c84550f49b2fd2b719bdf0be7',1,'f2k_timer::timer']]]
 ];
