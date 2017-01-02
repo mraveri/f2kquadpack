@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['elapsed_5ftime',['elapsed_time',['../structf2k__timer_1_1timer.html#aa5aee6ebc58df5de0530d116b321f7fc',1,'f2k_timer::timer']]]
+  ['raise_5ferror',['raise_error',['../namespacef2k__error__handler.html#a7ccbcabb74853436329b05653a27f2ae',1,'f2k_error_handler']]]
 ];
