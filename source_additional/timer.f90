@@ -25,6 +25,8 @@ module f2k_timer
 
     implicit none
 
+    private
+
     !----------------------------------------------------------------------------------------
     ! Internal definitions:
 
@@ -38,7 +40,7 @@ module f2k_timer
     !! @date      Dec 2016
     !! @copyright GNU Public License v3
     !!
-    type, public :: timer
+    type :: timer
 
         real    ( kind=8 ), public :: start_time          !< timer begin time
         real    ( kind=8 ), public :: end_time            !< timer end time
@@ -63,6 +65,12 @@ module f2k_timer
         procedure, public :: time         => timer_time     !< function that takes the time.
 
     end type timer
+
+    !----------------------------------------------------------------------------------------
+    ! public definitions:
+    public :: timer
+
+    !----------------------------------------------------------------------------------------
 
 contains
 

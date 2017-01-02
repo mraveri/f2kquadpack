@@ -19,6 +19,7 @@
 
 program test
 
+    use f2k_header
     use f2k_timer
 
     implicit none
@@ -26,6 +27,8 @@ program test
     type(timer) :: test_timer
     integer     :: ind
 
+    ! print the header:
+    call header( 'Timer tester' )
     ! start the timer:
     call test_timer%start()
     ! do some loops:
