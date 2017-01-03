@@ -20,13 +20,33 @@
 program test
 
     use f2k_header
+    use f2k_test
     use f2k_error_handler
 
     implicit none
 
+    character ( len  = : ), allocatable :: arg
+    integer   ( kind = 4 ) :: arg_length
+
+    ! process the command line to get the test output:
+    call get_command_argument( 1, length = arg_length )
+    !
+    if ( arg_length > 0 ) then
+        ! allocate the argument:
+        allocate( character(len = arg_length ) :: arg )
+        ! get the argument:
+        call get_command_argument( 1, value = arg )
+    else
+        arg = ""
+    end if
+
     ! print the header:
     call header( 'Error handler tester' )
-    ! test:
+    ! start the test:
+    call start_test( outroot = arg )
+    ! do the test operations:
     !call raise_error( "test message" )
+    ! end the test:
+    call end_test()
 
 end program test
