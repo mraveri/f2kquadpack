@@ -109,13 +109,13 @@ run_new_test: $(NEW_TEST_OUTPUT_TARGETS)
 # old library:
 $(OLD_LIB_TEST)/%.out: $(OLD_LIB_TEST)/%.x
 	@printf "%-${COL}s %-${COL}s" "Testing old library: " $*
-	@$(OLD_LIB_TEST)/$*.x $(OLD_LIB_TEST)/output > $(OLD_LIB_TEST)/$*.log 2>&1 ; \
+	@$(OLD_LIB_TEST)/$*.x $(OLD_LIB_TEST)/$*.output > $(OLD_LIB_TEST)/$*.log 2>&1 ; \
 	if [ $$? -ne 0 ]; \
 		then \
 			printf "%b%b" $(ERROR_STRING) "\n"; \
 			printf " Log file saved in: %s\n" $(OLD_LIB_TEST)/$*.log; \
 		else \
-			mv -f $(OLD_LIB_TEST)/output $(OLD_LIB_TEST)/$*.out > /dev/null 2>&1; \
+			mv -f $(OLD_LIB_TEST)/$*.output $(OLD_LIB_TEST)/$*.out > /dev/null 2>&1; \
 			if [ $$? -ne 0 ]; \
 				then printf "%b%b" $(WARN_STRING) ": output file not found \n"; \
 			else printf "%b%b" $(OK_STRING) "\n"; \
@@ -125,13 +125,13 @@ $(OLD_LIB_TEST)/%.out: $(OLD_LIB_TEST)/%.x
 # new library:
 $(NEW_LIB_TEST)/%.out: $(NEW_LIB_TEST)/%.x
 	@printf "%-${COL}s %-${COL}s" "Testing new library: " $*
-	@$(NEW_LIB_TEST)/$*.x $(NEW_LIB_TEST)/output > $(NEW_LIB_TEST)/$*.log 2>&1 ; \
+	@$(NEW_LIB_TEST)/$*.x $(NEW_LIB_TEST)/$*.output > $(NEW_LIB_TEST)/$*.log 2>&1 ; \
 	if [ $$? -ne 0 ]; \
 		then \
 			printf "%b%b" $(ERROR_STRING) "\n"; \
 			printf " Log file saved in: %s\n" $(NEW_LIB_TEST)/$*.log; \
 		else \
-			mv -f $(NEW_LIB_TEST)/output $(NEW_LIB_TEST)/$*.out > /dev/null 2>&1; \
+			mv -f $(NEW_LIB_TEST)/$*.output $(NEW_LIB_TEST)/$*.out > /dev/null 2>&1; \
 			if [ $$? -ne 0 ]; \
 				then printf "%b%b" $(WARN_STRING) ": output file not found \n"; \
 			else printf "%b%b" $(OK_STRING) "\n"; \

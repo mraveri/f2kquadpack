@@ -25,8 +25,8 @@ env:
 script:
   - while true; do echo 'Travis do not sleep!'; sleep 300s; done &
   - TIME_PID=$!
-  - docker run -v $(pwd):$(pwd) -e TRAVIS -t mraveri/travis_box /bin/sh -c "cd $(pwd) ; make all DEBUG=0"
-  - docker run -v $(pwd):$(pwd) -e TRAVIS -t mraveri/travis_box /bin/sh -c "cd $(pwd) ; make all DEBUG=1"
+  - docker run -v $(pwd):$(pwd) -e TRAVIS -t mraveri/travis_box /bin/sh -c "cd $(pwd) ; make all -j --output-sync=target DEBUG=0"
+  - docker run -v $(pwd):$(pwd) -e TRAVIS -t mraveri/travis_box /bin/sh -c "cd $(pwd) ; make all -j --output-sync=target DEBUG=1"
   - kill $TIME_PID
 
 after_success:
