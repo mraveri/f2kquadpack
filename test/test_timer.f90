@@ -54,7 +54,7 @@ program test
         ! feedback:
         print*, 'Loop', ind
         ! wait a bit:
-        call test_timer%wait(1.d0)
+        call test_timer%wait(0.1d0)
         ! take the loop:
         call test_timer%loop()
     end do

@@ -48,12 +48,50 @@ NEW_TEST_DIFF_TARGETS += $(addprefix $(NEW_LIB_TEST)/, $(TEST_DIFF_FILES))
 
 # compile the test against the old library:
 $(OLD_LIB_TEST)/%.x: $(TEST_DIR)/%.f90 | add_library old_library old_code_build_directories
-	$(F90C) $(FFLAGS) $(TEST_DIR)/$*.f90 -L $(OLD_BUILD_LIB_DIR) -lold_library -L $(ADD_BUILD_LIB_DIR) -ladd_library $(LAPACK_LINK) -I $(OLD_BUILD_INC_DIR) -I $(ADD_BUILD_INC_DIR) $(LAPACK_INCLUDE) -o $(OLD_LIB_TEST)/$*.x
-
+	@printf "%-${COL}s %-${COL}s" "Compiling old library test: " $* ; \
+	CMD="$(F90C) $(FFLAGS) $(TEST_DIR)/$*.f90 -L $(OLD_BUILD_LIB_DIR) -lold_library -L $(ADD_BUILD_LIB_DIR) -ladd_library $(LAPACK_LINK) -I $(OLD_BUILD_INC_DIR) -I $(ADD_BUILD_INC_DIR) $(LAPACK_INCLUDE) -o $(OLD_LIB_TEST)/$*.x" ; \
+	LOG="$$($${CMD} 2>&1 )" ; \
+	if [ $$? -eq 1 ]; then \
+        printf "%b%b" $(ERROR_STRING) "\n" ; \
+        printf "%b%s" " $(Red)Command failing: $(Color_Off)" $${CMD} ; \
+        printf "\n"; \
+        printf "%b%s" " $(Red)Fail log: $(Color_Off)" "$${LOG}" ; \
+        printf "\n"; \
+        false ; \
+    elif [ "$${LOG}" != "" ] ; then \
+    	printf "%b%b" $(WARN_STRING) "\n" ; \
+        printf "%b%s" " $(Orange)Command: $(Color_Off)" $${CMD} ; \
+        printf "\n"; \
+        printf "%b%s" " $(Orange)Warning log: $(Color_Off)" "$${LOG}" ; \
+        printf "\n"; \
+        false ; \
+    else \
+        printf "%b%b" $(OK_STRING) "\n"; \
+    fi;
+	
 # compile the test against the new library:
 $(NEW_LIB_TEST)/%.x: $(TEST_DIR)/%.f90 | add_library new_library new_code_build_directories
-	$(F90C) $(FFLAGS) $(TEST_DIR)/$*.f90 -L $(NEW_BUILD_LIB_DIR) -lnew_library -L $(ADD_BUILD_LIB_DIR) -ladd_library $(LAPACK_LINK) -I $(NEW_BUILD_INC_DIR) -I $(ADD_BUILD_INC_DIR) $(LAPACK_INCLUDE) -o $(NEW_LIB_TEST)/$*.x
-
+	@printf "%-${COL}s %-${COL}s" "Compiling new library test: " $* ; \
+	CMD="$(F90C) $(FFLAGS) $(TEST_DIR)/$*.f90 -L $(NEW_BUILD_LIB_DIR) -lnew_library -L $(ADD_BUILD_LIB_DIR) -ladd_library $(LAPACK_LINK) -I $(NEW_BUILD_INC_DIR) -I $(ADD_BUILD_INC_DIR) $(LAPACK_INCLUDE) -o $(NEW_LIB_TEST)/$*.x" ; \
+	LOG="$$($${CMD} 2>&1 )" ; \
+	if [ $$? -eq 1 ]; then \
+        printf "%b%b" $(ERROR_STRING) "\n" ; \
+        printf "%b%s" " $(Red)Command failing: $(Color_Off)" $${CMD} ; \
+        printf "\n"; \
+        printf "%b%s" " $(Red)Fail log: $(Color_Off)" "$${LOG}" ; \
+        printf "\n"; \
+        false ; \
+    elif [ "$${LOG}" != "" ] ; then \
+    	printf "%b%b" $(WARN_STRING) "\n" ; \
+        printf "%b%s" " $(Orange)Command: $(Color_Off)" $${CMD} ; \
+        printf "\n"; \
+        printf "%b%s" " $(Orange)Warning log: $(Color_Off)" "$${LOG}" ; \
+        printf "\n"; \
+        false ; \
+    else \
+        printf "%b%b" $(OK_STRING) "\n"; \
+    fi;
+    
 ################### test run              ######################################
 
 # global test targets:
@@ -70,31 +108,33 @@ run_new_test: $(NEW_TEST_OUTPUT_TARGETS)
 
 # old library:
 $(OLD_LIB_TEST)/%.out: $(OLD_LIB_TEST)/%.x
-	@echo 'Testing old library: ' $*
+	@printf "%-${COL}s %-${COL}s" "Testing old library: " $*
 	@$(OLD_LIB_TEST)/$*.x $(OLD_LIB_TEST)/output > $(OLD_LIB_TEST)/$*.log 2>&1 ; \
 	if [ $$? -ne 0 ]; \
 		then \
-			echo 'ERROR'; \
+			printf "%b%b" $(ERROR_STRING) "\n"; \
+			printf " Log file saved in: %s\n" $(OLD_LIB_TEST)/$*.log; \
 		else \
 			mv -f $(OLD_LIB_TEST)/output $(OLD_LIB_TEST)/$*.out > /dev/null 2>&1; \
 			if [ $$? -ne 0 ]; \
-				then echo 'WARNING: output file not found'; \
-			else echo 'OK'; \
+				then printf "%b%b" $(WARN_STRING) ": output file not found \n"; \
+			else printf "%b%b" $(OK_STRING) "\n"; \
 			fi \
 		fi
 
 # new library:
 $(NEW_LIB_TEST)/%.out: $(NEW_LIB_TEST)/%.x
-	@echo 'Testing new library: ' $*
+	@printf "%-${COL}s %-${COL}s" "Testing new library: " $*
 	@$(NEW_LIB_TEST)/$*.x $(NEW_LIB_TEST)/output > $(NEW_LIB_TEST)/$*.log 2>&1 ; \
 	if [ $$? -ne 0 ]; \
 		then \
-			echo 'ERROR'; \
+			printf "%b%b" $(ERROR_STRING) "\n"; \
+			printf " Log file saved in: %s\n" $(NEW_LIB_TEST)/$*.log; \
 		else \
 			mv -f $(NEW_LIB_TEST)/output $(NEW_LIB_TEST)/$*.out > /dev/null 2>&1; \
 			if [ $$? -ne 0 ]; \
-				then echo 'WARNING: output file not found'; \
-			else echo 'OK'; \
+				then printf "%b%b" $(WARN_STRING) ": output file not found \n"; \
+			else printf "%b%b" $(OK_STRING) "\n"; \
 			fi \
 		fi
 
@@ -104,21 +144,22 @@ compare_test_results: $(NEW_TEST_DIFF_TARGETS)
 
 # run numdiff:
 $(NEW_LIB_TEST)/%.diff: $(NEW_LIB_TEST)/%.out $(OLD_LIB_TEST)/%.out
-	@echo 'Comparing: ' $*
+	@printf "%-${COL}s %-${COL}s" "Comparing: " $*
 	@numdiff $(NEW_LIB_TEST)/$*.out $(OLD_LIB_TEST)/$*.out > $(NEW_LIB_TEST)/$*.diff 2>&1 ; \
 	if [ $$? -ne 0 ]; \
 		then \
-			echo 'ERROR'; \
+			printf "%b%b" $(ERROR_STRING) "\n"; \
+			printf " Diff file saved in: %s\n" $(NEW_LIB_TEST)/$*.diff; \
 		else \
 			rm -rf $(NEW_LIB_TEST)/$*.diff; \
 			if [ $$? -ne 0 ]; \
-				then echo 'WARNING: diff file not found'; \
+				then printf "%b%b" $(WARN_STRING) ": diff file not found \n"; \
 			else \
-				echo 'OK'; \
+				printf "%b%b" $(OK_STRING) "\n"; \
 				touch $(NEW_LIB_TEST)/$*.diff; \
 			fi \
 		fi
-	
+
 ################### general targets       ######################################
 
 .PHONY: test
@@ -128,5 +169,5 @@ test: $(TEST_SOURCES_TARGETS)
 clean_test:
 	@rm -rf $(NEW_LIB_TEST)/*.out $(OLD_LIB_TEST)/*.out
 
-all: test run_test
+all: test run_test compare_test_results
 

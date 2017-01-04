@@ -21,90 +21,74 @@
 ################### general colors           ###################################
 
 # Reset
-Color_Off='\e[0m'       # Text Reset
+Color_Off  = \033[0m
 
 # Regular Colors
-Black='\e[0;30m'        # Black
-Red='\e[0;31m'          # Red
-Green='\e[0;32m'        # Green
-Yellow='\e[0;33m'       # Yellow
-Blue='\e[0;34m'         # Blue
-Purple='\e[0;35m'       # Purple
-Cyan='\e[0;36m'         # Cyan
-White='\e[0;37m'        # White
+Black      = \033[0;30m
+Red        = \033[0;31m
+Green      = \033[0;32m
+Orange     = \033[0;33m
+Blue       = \033[0;34m
+Purple     = \033[0;35m
+Cyan       = \033[0;36m
+White      = \033[0;37m
 
 # Bold
-BBlack='\e[1;30m'       # Black
-BRed='\e[1;31m'         # Red
-BGreen='\e[1;32m'       # Green
-BYellow='\e[1;33m'      # Yellow
-BBlue='\e[1;34m'        # Blue
-BPurple='\e[1;35m'      # Purple
-BCyan='\e[1;36m'        # Cyan
-BWhite='\e[1;37m'       # White
+BBlack     = \033[1;30m
+BRed       = \033[1;31m
+BGreen     = \033[1;32m
+BOrange    = \033[1;33m
+BBlue      = \033[1;34m
+BPurple    = \033[1;35m
+BCyan      = \033[1;36m
+BWhite     = \033[1;37m
 
 # Underline
-UBlack='\e[4;30m'       # Black
-URed='\e[4;31m'         # Red
-UGreen='\e[4;32m'       # Green
-UYellow='\e[4;33m'      # Yellow
-UBlue='\e[4;34m'        # Blue
-UPurple='\e[4;35m'      # Purple
-UCyan='\e[4;36m'        # Cyan
-UWhite='\e[4;37m'       # White
+UBlack     = \033[4;30m
+URed       = \033[4;31m
+UGreen     = \033[4;32m
+UOrange    = \033[4;33m
+UBlue      = \033[4;34m
+UPurple    = \033[4;35m
+UCyan      = \033[4;36m
+UWhite     = \033[4;37m
 
 # Background
-On_Black='\e[40m'       # Black
-On_Red='\e[41m'         # Red
-On_Green='\e[42m'       # Green
-On_Yellow='\e[43m'      # Yellow
-On_Blue='\e[44m'        # Blue
-On_Purple='\e[45m'      # Purple
-On_Cyan='\e[46m'        # Cyan
-On_White='\e[47m'       # White
+On_Black   = \033[40m
+On_Red     = \033[41m
+On_Green   = \033[42m
+On_Orange  = \033[43m
+On_Blue    = \033[44m
+On_Purple  = \033[45m
+On_Cyan    = \033[46m
+On_White   = \033[47m
 
 # High Intensty
-IBlack='\e[0;90m'       # Black
-IRed='\e[0;91m'         # Red
-IGreen='\e[0;92m'       # Green
-IYellow='\e[0;93m'      # Yellow
-IBlue='\e[0;94m'        # Blue
-IPurple='\e[0;95m'      # Purple
-ICyan='\e[0;96m'        # Cyan
-IWhite='\e[0;97m'       # White
+IBlack     = \033[0;90m
+IRed       = \033[0;91m
+IGreen     = \033[0;92m
+IOrange    = \033[0;93m
+IBlue      = \033[0;94m
+IPurple    = \033[0;95m
+ICyan      = \033[0;96m
+IWhite     = \033[0;97m
 
 # Bold High Intensty
-BIBlack='\e[1;90m'      # Black
-BIRed='\e[1;91m'        # Red
-BIGreen='\e[1;92m'      # Green
-BIYellow='\e[1;93m'     # Yellow
-BIBlue='\e[1;94m'       # Blue
-BIPurple='\e[1;95m'     # Purple
-BICyan='\e[1;96m'       # Cyan
-BIWhite='\e[1;97m'      # White
+BIBlack    = \033[1;90m
+BIRed      = \033[1;91m
+BIGreen    = \033[1;92m
+BIOrange   = \033[1;93m
+BIBlue     = \033[1;94m
+BIPurple   = \033[1;95m
+BICyan     = \033[1;96m
+BIWhite    = \033[1;97m
 
 # High Intensty backgrounds
-On_IBlack='\e[0;100m'   # Black
-On_IRed='\e[0;101m'     # Red
-On_IGreen='\e[0;102m'   # Green
-On_IYellow='\e[0;103m'  # Yellow
-On_IBlue='\e[0;104m'    # Blue
-On_IPurple='\e[10;95m'  # Purple
-On_ICyan='\e[0;106m'    # Cyan
-On_IWhite='\e[0;107m'   # White
-
-################### specific colors          ###################################
-
-# color to signal everything's fine:
-OK_COLOR=$(Green)
-# color for errors:
-ERROR_COLOR=$(Red)
-# color for warnings
-WARN_COLOR=$(Yellow)
-
-################### colorized make           ###################################
-
-OK_STRING=$(OK_COLOR)'[OK]'$(Color_Off)
-ERROR_STRING=$(ERROR_COLOR)'[ERRORS]'$(Color_Off)
-WARN_STRING=$(WARN_COLOR)'[WARNINGS]'$(Color_Off)
-
+On_IBlack  = \033[0;100m
+On_IRed    = \033[0;101m
+On_IGreen  = \033[0;102m
+On_IOrange = \033[0;103m
+On_IBlue   = \033[0;104m
+On_IPurple = \033[10;95m
+On_ICyan   = \033[0;106m
+On_IWhite  = \033[0;107m
