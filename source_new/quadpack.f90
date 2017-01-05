@@ -45,7 +45,7 @@ contains
     !> DQWGTC defines the weight function used by DQC25C.
     !!
     !! @authors   Robert Piessens, Elise de Doncker
-    !! @date      02 January 2017  \n
+    !! @date      05 January 2017  \n
     !!            11 September 2015
     !! @copyright GNU Public License v3
     !! @todo      Improve the documentation of the function
@@ -54,9 +54,14 @@ contains
 
         implicit none
 
-        real    ( kind = 8 ) dqwgtc
-        real    ( kind = 8 ) c,p2,p3,p4,x
-        integer ( kind = 4 ) kp
+        real    ( kind = 8 ), intent(in) :: x   !< input
+        real    ( kind = 8 ), intent(in) :: c   !< input
+        real    ( kind = 8 ), intent(in) :: p2  !< input
+        real    ( kind = 8 ), intent(in) :: p3  !< input
+        real    ( kind = 8 ), intent(in) :: p4  !< input
+        integer ( kind = 4 ), intent(in) :: kp  !< input
+
+        real    ( kind = 8 ) :: dqwgtc
 
         dqwgtc = 0.1D+01 / ( x - c )
 
@@ -101,6 +106,7 @@ contains
 40  continue
 
     return
+
 end function dqwgts
 
     !----------------------------------------------------------------------------------------
