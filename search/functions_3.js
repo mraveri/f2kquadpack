@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['xerror',['xerror',['../namespacequadpack.html#ac1e5b01c1b8779878ebbc064e5f499df',1,'quadpack']]]
+  ['raise_5ferror',['raise_error',['../namespacef2k__error__handler.html#a7ccbcabb74853436329b05653a27f2ae',1,'f2k_error_handler']]]
 ];
