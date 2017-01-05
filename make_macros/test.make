@@ -49,7 +49,7 @@ NEW_TEST_DIFF_TARGETS += $(addprefix $(NEW_LIB_TEST)/, $(TEST_DIFF_FILES))
 # compile the test against the old library:
 $(OLD_LIB_TEST)/%.x: $(TEST_DIR)/%.f90 | add_library old_library old_code_build_directories
 	@printf "%-${COL}s %-${COL}s" "Compiling old library test: " $* ; \
-	CMD="$(F90C) $(FFLAGS) $(TEST_DIR)/$*.f90 -L $(OLD_BUILD_LIB_DIR) -lold_library -L $(ADD_BUILD_LIB_DIR) -ladd_library $(LAPACK_LINK) -I $(OLD_BUILD_INC_DIR) -I $(ADD_BUILD_INC_DIR) $(LAPACK_INCLUDE) -o $(OLD_LIB_TEST)/$*.x" ; \
+	CMD="$(F90C) $(FFLAGS) -DOLD $(TEST_DIR)/$*.f90 -L $(OLD_BUILD_LIB_DIR) -lold_library -L $(ADD_BUILD_LIB_DIR) -ladd_library $(LAPACK_LINK) -I $(OLD_BUILD_INC_DIR) -I $(ADD_BUILD_INC_DIR) $(LAPACK_INCLUDE) -o $(OLD_LIB_TEST)/$*.x" ; \
 	LOG="$$($${CMD} 2>&1 )" ; \
 	if [ $$? -eq 1 ]; then \
         printf "%b%b" $(ERROR_STRING) "\n" ; \
@@ -72,7 +72,7 @@ $(OLD_LIB_TEST)/%.x: $(TEST_DIR)/%.f90 | add_library old_library old_code_build_
 # compile the test against the new library:
 $(NEW_LIB_TEST)/%.x: $(TEST_DIR)/%.f90 | add_library new_library new_code_build_directories
 	@printf "%-${COL}s %-${COL}s" "Compiling new library test: " $* ; \
-	CMD="$(F90C) $(FFLAGS) $(TEST_DIR)/$*.f90 -L $(NEW_BUILD_LIB_DIR) -lnew_library -L $(ADD_BUILD_LIB_DIR) -ladd_library $(LAPACK_LINK) -I $(NEW_BUILD_INC_DIR) -I $(ADD_BUILD_INC_DIR) $(LAPACK_INCLUDE) -o $(NEW_LIB_TEST)/$*.x" ; \
+	CMD="$(F90C) $(FFLAGS) -DNEW $(TEST_DIR)/$*.f90 -L $(NEW_BUILD_LIB_DIR) -lnew_library -L $(ADD_BUILD_LIB_DIR) -ladd_library $(LAPACK_LINK) -I $(NEW_BUILD_INC_DIR) -I $(ADD_BUILD_INC_DIR) $(LAPACK_INCLUDE) -o $(NEW_LIB_TEST)/$*.x" ; \
 	LOG="$$($${CMD} 2>&1 )" ; \
 	if [ $$? -eq 1 ]; then \
         printf "%b%b" $(ERROR_STRING) "\n" ; \
