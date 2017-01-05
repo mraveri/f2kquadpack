@@ -53,7 +53,7 @@ OLD_SOURCES_TARGETS = $(addprefix $(OLD_BUILD_OBJ_DIR)/, $(OLD_SOURCES_FILES))
 # compile the old library:
 $(OLD_BUILD_OBJ_DIR)/%.o: $(OLD_SOURCE_DIR)/%.f90 | old_code_build_directories
 	@printf "%-${COL}s %-${COL}s" "Compiling old library: " $* ; \
-	@CMD="$(F90C) $(FFLAGS) $(LAPACK_LINK) $(LAPACK_INCLUDE) $(MODULE_FLAG)$(OLD_BUILD_INC_DIR) -c $(OLD_SOURCE_DIR)/$*.f90 -o $(OLD_BUILD_OBJ_DIR)/$*.o" ; \
+	CMD="$(F90C) $(FFLAGS) $(LAPACK_LINK) $(LAPACK_INCLUDE) $(MODULE_FLAG)$(OLD_BUILD_INC_DIR) -c $(OLD_SOURCE_DIR)/$*.f90 -o $(OLD_BUILD_OBJ_DIR)/$*.o" ; \
 	LOG="$$($${CMD} 2>&1 )" ; \
 	if [ $$? -eq 1 ]; then \
         printf "%b%b" $(ERROR_STRING) "\n" ; \
