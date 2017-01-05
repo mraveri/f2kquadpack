@@ -31,7 +31,6 @@ module f2k_error_handler
     !----------------------------------------------------------------------------------------
     ! Internal definitions:
 
-    private :: abort
     interface
         subroutine abort() bind(C, name="abort")
         end subroutine
