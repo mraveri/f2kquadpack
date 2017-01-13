@@ -276,7 +276,7 @@ Functions/Subroutines</h2></td></tr>
 <p>Input/output, real ( kind = 8 ) B(N). On input, the right hand side. On output, the solution.</p>
 <p>Output, integer ( kind = 4 ) INFO, error flag. 0, normal value. K, the K-th element of the diagonal becomes exactly zero. The routine returns if this error condition is detected. </p>
 
-<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l00182">182</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
+<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l00188">188</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
 
 </div>
 </div>
@@ -426,7 +426,7 @@ key    - integer ( kind = 4 )
 <p>work arrays iwork - integer ( kind = 4 ) vector of dimension at least limit, the first k elements of which contain pointers to the error estimates over the subintervals, such that work(limit*3+iwork(1)),... , work(limit*3+iwork(k)) form a decreasing sequence with k = last if last.le.(limit/2+2), and k = limit+1-last otherwise</p>
 <p>work - real ( kind = 8 ) vector of dimension at least lenw on return work(1), ..., work(last) contain the left end points of the subintervals in the partition of (a,b), work(limit+1), ..., work(limit+last) contain the right end points, work(limit*2+1), ..., work(limit*2+last) contain the integral approximations over the subintervals, work(limit*3+1), ..., work(limit*3+last) contain the error estimates. </p>
 
-<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l00795">795</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
+<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l00801">801</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
 
 </div>
 </div>
@@ -573,7 +573,7 @@ key    - integer ( kind = 4 )
 
  epmach  is the largest relative spacing.
  uflow  is the smallest positive magnitude.</pre> 
-<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l00436">436</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
+<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l00442">442</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
 
 </div>
 </div>
@@ -696,7 +696,7 @@ key    - integer ( kind = 4 )
 <p>work arrays iwork - integer ( kind = 4 ) vector of dimension at least limit, the first k elements of which contain pointers to the error estimates over the subintervals, such that work(limit*3+iwork(1)),... , work(limit*3+iwork(k)) form a decreasing sequence, with k = last if last.le.(limit/2+2), and k = limit+1-last otherwise</p>
 <p>work - real ( kind = 8 ) vector of dimension at least lenw on return work(1), ..., work(last) contain the left end points of the subintervals in the partition of (a,b), work(limit+1), ..., work(limit+last) contain the right end points, work(limit*2+1), ...,work(limit*2+last) contain the integral approximations over the subintervals, work(limit*3+1), ..., work(limit*3) contain the error estimates. </p>
 
-<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l01467">1467</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
+<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l01473">1473</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
 
 </div>
 </div>
@@ -858,7 +858,7 @@ limexp in routine dqelg.
 <p>machine dependent constants</p>
 <p>epmach is the largest relative spacing. uflow is the smallest positive magnitude. oflow is the largest positive magnitude. </p>
 
-<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l01044">1044</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
+<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l01050">1050</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
 
 </div>
 </div>
@@ -993,7 +993,7 @@ limexp in routine dqelg.
 <p>work arrays iwork - integer ( kind = 4 ) vector of dimension at least leniw. on return, the first k elements of which contain pointers to the error estimates over the subintervals, such that work(limit*3+iwork(1)),..., work(limit*3+iwork(k)) form a decreasing sequence, with k = last if last.le.(limit/2+2), and k = limit+1-last otherwise iwork(limit+1), ...,iwork(limit+last) contain the subdivision levels of the subintervals, i.e. if (aa,bb) is a subinterval of (p1,p2) where p1 as well as p2 is a user-provided break point or integration limit, then (aa,bb) has level l if abs(bb-aa) = abs(p2-p1)*2**(-l), iwork(limit*2+1), ..., iwork(limit*2+npts2) have no significance for the user, note that limit = (leniw-npts2)/2.</p>
 <p>work - real ( kind = 8 ) vector of dimension at least lenw on return work(1), ..., work(last) contain the left end points of the subintervals in the partition of (a,b), work(limit+1), ..., work(limit+last) contain the right end points, work(limit*2+1), ..., work(limit*2+last) contain the integral approximations over the subintervals, work(limit*3+1), ..., work(limit*3+last) contain the corresponding error estimates, work(limit*4+1), ..., work(limit*4+npts2) contain the integration limits and the break points sorted in an ascending sequence. note that limit = (leniw-npts2)/2. </p>
 
-<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l02241">2241</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
+<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l02247">2247</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
 
 </div>
 </div>
@@ -1169,7 +1169,7 @@ limexp in routine epsalg (rlist2 should be of dimension
 <p>machine dependent constants</p>
 <p>epmach is the largest relative spacing. uflow is the smallest positive magnitude. oflow is the largest positive magnitude. </p>
 
-<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l01739">1739</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
+<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l01745">1745</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
 
 </div>
 </div>
@@ -1290,7 +1290,7 @@ limexp in routine epsalg (rlist2 should be of dimension
 <p>work arrays iwork - integer ( kind = 4 ) vector of dimension at least limit, the first k elements of which contain pointers to the error estimates over the subintervals such that work(limit*3+iwork(1)),... , work(limit*3+iwork(k)) form a decreasing sequence, with k = last if last.le.(limit/2+2), and k = limit+1-last otherwise</p>
 <p>work - real ( kind = 8 ) vector of dimension at least lenw on return work(1), ..., work(last) contain the left end-points of the subintervals in the partition of (a,b), work(limit+1), ..., work(limit+last) contain the right end-points, work(limit*2+1), ..., work(limit*2+last) contain the integral approximations over the subintervals, work(limit*3+1), ..., work(limit*3+last) contain the error estimates. </p>
 
-<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l02867">2867</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
+<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l02873">2873</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
 
 </div>
 </div>
@@ -1433,7 +1433,7 @@ list of major variables
 <p>machine dependent constants</p>
 <p>epmach is the largest relative spacing. uflow is the smallest positive magnitude. oflow is the largest positive magnitude. </p>
 
-<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l02481">2481</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
+<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l02487">2487</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
 
 </div>
 </div>
@@ -1561,7 +1561,7 @@ list of major variables
 <p>work arrays iwork - integer ( kind = 4 ) vector of dimension at least limit, the first k elements of which contain pointers to the error estimates over the subintervals, such that work(limit*3+iwork(1)), ... , work(limit*3+iwork(k)) form a decreasing sequence, with k = last if last.le.(limit/2+2), and k = limit+1-last otherwise</p>
 <p>work - real ( kind = 8 ) vector of dimension at least lenw on return work(1), ..., work(last) contain the left end points of the subintervals in the partition of (a,b), work(limit+1), ..., work(limit+last) contain the right end points, work(limit*2+1), ..., work(limit*2+last) contain the integral approximations over the subintervals, work(limit*3+1), ..., work(limit*3+last) contain the error estimates. </p>
 
-<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l03373">3373</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
+<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l03379">3379</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
 
 </div>
 </div>
@@ -1708,7 +1708,7 @@ list of major variables
 
  epmach is the largest relative spacing.
  uflow is the smallest positive magnitude.</pre> 
-<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l03062">3062</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
+<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l03068">3068</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
 
 </div>
 </div>
@@ -1843,7 +1843,7 @@ list of major variables
 <p>work arrays iwork - integer ( kind = 4 ) vector of dimension at least leniw on return, iwork(k) for k = 1, 2, ..., lst contain the error flags on the cycles.</p>
 <p>work - real ( kind = 8 ) vector of dimension at least lenw on return, work(1), ..., work(lst) contain the integral approximations over the cycles, work(limlst+1), ..., work(limlst+lst) contain the error extimates over the cycles. further elements of work have no specific meaning for the user. </p>
 
-<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l03958">3958</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
+<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l03964">3964</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
 
 </div>
 </div>
@@ -2028,7 +2028,7 @@ limexp in routine dqelg (psum must be of dimension
 (limexp+2) at least).
 </pre><p>c1, c2 - end points of subinterval (of length cycle) cycle - (2*int(abs(omega))+1)*pi/abs(omega) psum - vector of dimension at least (limexp+2) (see routine dqelg) psum contains the part of the epsilon table which is still needed for further computations. each element of psum is a partial sum of the series which should sum to the value of the integral. errsum - sum of error estimates over the subintervals, calculated cumulatively epsa - absolute tolerance requested over current subinterval chebmo - array containing the modified chebyshev moments (see also routine dqc25f) </p>
 
-<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l03624">3624</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
+<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l03630">3630</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
 
 </div>
 </div>
@@ -2172,7 +2172,7 @@ limexp in routine dqelg (psum must be of dimension
 <p>work arrays iwork - integer ( kind = 4 ) vector of dimension at least leniw on return, the first k elements of which contain pointers to the error estimates over the subintervals, such that work(limit*3+iwork(1)), .. work(limit*3+iwork(k)) form a decreasing sequence, with limit = lenw/2 , and k = last if last.le.(limit/2+2), and k = limit+1-last otherwise. furthermore, iwork(limit+1), ..., iwork(limit+ last) indicate the subdivision levels of the subintervals, such that iwork(limit+i) = l means that the subinterval numbered i is of length abs(b-a)*2**(1-l).</p>
 <p>work - real ( kind = 8 ) vector of dimension at least lenw on return work(1), ..., work(last) contain the left end points of the subintervals in the partition of (a,b), work(limit+1), ..., work(limit+last) contain the right end points, work(limit*2+1), ..., work(limit*2+last) contain the integral approximations over the subintervals, work(limit*3+1), ..., work(limit*3+last) contain the error estimates. work(limit*4+1), ..., work(limit*4+maxp1*25) provide space for storing the chebyshev moments. note that limit = lenw/2. </p>
 
-<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l04727">4727</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
+<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l04733">4733</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
 
 </div>
 </div>
@@ -2365,7 +2365,7 @@ list of major variables
 <p>machine dependent constants</p>
 <p>epmach is the largest relative spacing. uflow is the smallest positive magnitude. oflow is the largest positive magnitude. </p>
 
-<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l04272">4272</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
+<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l04278">4278</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
 
 </div>
 </div>
@@ -2507,7 +2507,7 @@ list of major variables
 <p>work arrays iwork - integer ( kind = 4 ) vector of dimension limit, the first k elements of which contain pointers to the error estimates over the subintervals, such that work(limit*3+iwork(1)), ..., work(limit*3+iwork(k)) form a decreasing sequence with k = last if last.le.(limit/2+2), and k = limit+1-last otherwise</p>
 <p>work - real ( kind = 8 ) vector of dimension lenw on return work(1), ..., work(last) contain the left end points of the subintervals in the partition of (a,b), work(limit+1), ..., work(limit+last) contain the right end points, work(limit*2+1), ..., work(limit*2+last) contain the integral approximations over the subintervals, work(limit*3+1), ..., work(limit*3+last) contain the error estimates. </p>
 
-<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l05307">5307</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
+<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l05313">5313</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
 
 </div>
 </div>
@@ -2667,7 +2667,7 @@ list of major variables
 <p>machine dependent constants</p>
 <p>epmach is the largest relative spacing. uflow is the smallest positive magnitude. </p>
 
-<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l04949">4949</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
+<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l04955">4955</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
 
 </div>
 </div>
@@ -2750,7 +2750,7 @@ list of major variables
 <p>fval - value of the function f at the points cos(k*pi/24), k = 0, ..., 24 cheb12 - chebyshev series expansion coefficients, for the function f, of degree 12 cheb24 - chebyshev series expansion coefficients, for the function f, of degree 24 res12 - approximation to the integral corresponding to the use of cheb12 res24 - approximation to the integral corresponding to the use of cheb24 dqwgtc - external function subprogram defining the weight function hlgth - half-length of the interval centr - mid point of the interval</p>
 <p>the vector x contains the values cos(k*pi/24), k = 1, ..., 11, to be used for the chebyshev series expansion of f </p>
 
-<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l05415">5415</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
+<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l05421">5421</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
 
 </div>
 </div>
@@ -2884,7 +2884,7 @@ list of major variables
 <pre class="fragment"> machine dependent constant
 
  oflow is the largest positive magnitude.</pre> 
-<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l05626">5626</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
+<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l05632">5632</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
 
 </div>
 </div>
@@ -3020,7 +3020,7 @@ list of major variables
 <p>the vector x contains the values cos(k*pi/24) k = 1, ..., 11, to be used for the computation of the chebyshev series expansion of f.</p>
 <p>fval - value of the function f at the points (br-bl)*0.5*cos(k*pi/24)+(br+bl)*0.5 k = 0, ..., 24 cheb12 - coefficients of the chebyshev series expansion of degree 12, for the function f, in the interval (bl,br) cheb24 - coefficients of the chebyshev series expansion of degree 24, for the function f, in the interval (bl,br) res12 - approximation to the integral obtained from cheb12 res24 - approximation to the integral obtained from cheb24 dqwgts - external function subprogram defining the four possible weight functions hlgth - half-length of the interval (bl,br) centr - mid point of the interval (bl,br) </p>
 
-<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l05955">5955</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
+<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l05961">5961</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
 
 </div>
 </div>
@@ -3072,7 +3072,7 @@ list of major variables
 <p>on return cheb12 - real ( kind = 8 ) vector of dimension 13 containing the chebyshev coefficients for degree 12</p>
 <p>cheb24 - real ( kind = 8 ) vector of dimension 25 containing the chebyshev coefficients for degree 24 </p>
 
-<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l06245">6245</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
+<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l06251">6251</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
 
 </div>
 </div>
@@ -3160,7 +3160,7 @@ list of major variables
 <p>machine dependent constants</p>
 <p>epmach is the largest relative spacing. oflow is the largest positive magnitude. limexp is the maximum number of elements the epsilon table can contain. if this number is reached, the upper diagonal of the epsilon table is deleted. </p>
 
-<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l06430">6430</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
+<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l06436">6436</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
 
 </div>
 </div>
@@ -3262,7 +3262,7 @@ on return
 <p>machine dependent constants</p>
 <p>epmach is the largest relative spacing. uflow is the smallest positive magnitude. </p>
 
-<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l06630">6630</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
+<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l06636">6636</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
 
 </div>
 </div>
@@ -3393,7 +3393,7 @@ on return
 <p>machine dependent constants</p>
 <p>epmach is the largest relative spacing. uflow is the smallest positive magnitude. </p>
 
-<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l06821">6821</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
+<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l06827">6827</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
 
 </div>
 </div>
@@ -3542,7 +3542,7 @@ on return
 <p>machine dependent constants</p>
 <p>epmach is the largest relative spacing. uflow is the smallest positive magnitude. </p>
 
-<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l07004">7004</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
+<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l07010">7010</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
 
 </div>
 </div>
@@ -3663,7 +3663,7 @@ machine dependent constants
 
 epmach is the largest relative spacing.
 uflow is the smallest positive magnitude.</pre> 
-<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l07179">7179</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
+<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l07185">7185</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
 
 </div>
 </div>
@@ -3784,7 +3784,7 @@ machine dependent constants
 
 epmach is the largest relative spacing.
 uflow is the smallest positive magnitude.</pre> 
-<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l07361">7361</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
+<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l07367">7367</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
 
 </div>
 </div>
@@ -3905,7 +3905,7 @@ machine dependent constants
 
 epmach is the largest relative spacing.
 uflow is the smallest positive magnitude.</pre> 
-<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l07558">7558</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
+<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l07564">7564</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
 
 </div>
 </div>
@@ -4016,7 +4016,7 @@ machine dependent constants
 
 epmach is the largest relative spacing.
 uflow is the smallest positive magnitude.</pre> 
-<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l07764">7764</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
+<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l07770">7770</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
 
 </div>
 </div>
@@ -4098,7 +4098,7 @@ uflow is the smallest positive magnitude.</pre>
 <p>machine dependent constants</p>
 <p>epmach is the largest relative spacing. uflow is the smallest positive magnitude. </p>
 
-<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l07983">7983</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
+<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l07989">7989</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
 
 </div>
 </div>
@@ -4171,7 +4171,7 @@ uflow is the smallest positive magnitude.</pre>
 <p>rh - real ( kind = 8 ) vector of dimension 25 rh(k) is the integral over (-1,1) of (1-x)**beta*log((1-x)/2)*t(k-1,x), k = 1, ..., 25.</p>
 <p>integr - integer ( kind = 4 ) input parameter indicating the modified moments to be computed integr = 1 compute ri, rj = 2 compute ri, rj, rg = 3 compute ri, rj, rh = 4 compute ri, rj, rg, rh </p>
 
-<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l08185">8185</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
+<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l08191">8191</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
 
 </div>
 </div>
@@ -4277,7 +4277,7 @@ machine dependent constants
 
 epmach is the largest relative spacing.
 uflow is the smallest positive magnitude.</pre> 
-<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l08383">8383</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
+<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l08389">8389</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
 
 </div>
 </div>
@@ -4371,7 +4371,7 @@ uflow is the smallest positive magnitude.</pre>
 
   nrmax  - integer ( kind = 4 )
            maxerr = iord(nrmax)</pre> 
-<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l08712">8712</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
+<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l08718">8718</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
 
 </div>
 </div>
@@ -4382,37 +4382,37 @@ uflow is the smallest positive magnitude.</pre>
         <tr>
           <td class="memname">real ( kind = 8 ) function quadpack::dqwgtc </td>
           <td>(</td>
-          <td class="paramtype">real ( kind = 8 )&#160;</td>
+          <td class="paramtype">real ( kind = 8 ), intent(in)&#160;</td>
           <td class="paramname"><em>x</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">real ( kind = 8 )&#160;</td>
+          <td class="paramtype">real ( kind = 8 ), intent(in)&#160;</td>
           <td class="paramname"><em>c</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">real ( kind = 8 )&#160;</td>
+          <td class="paramtype">real ( kind = 8 ), intent(in)&#160;</td>
           <td class="paramname"><em>p2</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">real ( kind = 8 )&#160;</td>
+          <td class="paramtype">real ( kind = 8 ), intent(in)&#160;</td>
           <td class="paramname"><em>p3</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">real ( kind = 8 )&#160;</td>
+          <td class="paramtype">real ( kind = 8 ), intent(in)&#160;</td>
           <td class="paramname"><em>p4</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">integer ( kind = 4 )&#160;</td>
+          <td class="paramtype">integer ( kind = 4 ), intent(in)&#160;</td>
           <td class="paramname"><em>kp</em>&#160;</td>
         </tr>
         <tr>
@@ -4425,10 +4425,21 @@ uflow is the smallest positive magnitude.</pre>
 
 <p>DQWGTC defines the weight function used by DQC25C. </p>
 <dl class="section author"><dt>Authors</dt><dd>Robert Piessens, Elise de Doncker </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>02 January 2017 <br />
+<dl class="section date"><dt>Date</dt><dd>07 January 2017 <br />
  11 September 2015 </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>GNU Public License v3 </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Todo:</a></b></dt><dd>Improve the documentation of the function </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Todo:</a></b></dt><dd>Improve the documentation of the function. Why do we need this many input if they are not used? </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>input</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">c</td><td>input</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">p2</td><td>input. Not used inside the function.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">p3</td><td>input. Not used inside the function.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">p4</td><td>input. Not used inside the function.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">kp</td><td>input. Not used inside the function. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Definition at line <a class="el" href="quadpack_8f90_source.html#l00054">54</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
 
@@ -4488,7 +4499,7 @@ uflow is the smallest positive magnitude.</pre>
 <p>Author:</p>
 <p>Robert Piessens, Elise de Doncker </p>
 
-<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l00118">118</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
+<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l00124">124</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
 
 </div>
 </div>
@@ -4548,7 +4559,7 @@ uflow is the smallest positive magnitude.</pre>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000003">Todo:</a></b></dt><dd>Can we remove the horrible gotos without altering functionality and performances? <br />
  Improve the documentation of the function </dd></dl>
 
-<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l00078">78</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
+<p>Definition at line <a class="el" href="quadpack_8f90_source.html#l00083">83</a> of file <a class="el" href="quadpack_8f90_source.html">quadpack.f90</a>.</p>
 
 </div>
 </div>
@@ -4610,7 +4621,7 @@ uflow is the smallest positive magnitude.</pre>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 5 2017 13:34:48 for f2kquadpack by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jan 13 2017 09:01:31 for f2kquadpack by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>
