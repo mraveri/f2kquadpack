@@ -17,6 +17,10 @@
 # This file contains part of the f2k build system: building and running tests
 #
 
+################### hard coded options       ###################################
+
+NUMDIFF_OPTIONS=-V --absolute-tolerance=0.001 --relative-tolerance=0.001
+
 ################### general test definitions ###################################
 
 # get the test source files:
@@ -145,7 +149,7 @@ compare_test_results: $(NEW_TEST_DIFF_TARGETS)
 # run numdiff:
 $(NEW_LIB_TEST)/%.diff: $(NEW_LIB_TEST)/%.out $(OLD_LIB_TEST)/%.out
 	@printf "%-${COL}s %-${COL}s" "Comparing: " $*
-	@numdiff $(NEW_LIB_TEST)/$*.out $(OLD_LIB_TEST)/$*.out > $(NEW_LIB_TEST)/$*.diff 2>&1 ; \
+	@numdiff $(NEW_LIB_TEST)/$*.out $(OLD_LIB_TEST)/$*.out $(NUMDIFF_OPTIONS) > $(NEW_LIB_TEST)/$*.diff 2>&1 ; \
 	if [ $$? -ne 0 ]; \
 		then \
 			printf "%b%b" $(ERROR_STRING) "\n"; \
