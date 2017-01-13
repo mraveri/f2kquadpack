@@ -45,10 +45,10 @@ contains
     !> DQWGTC defines the weight function used by DQC25C.
     !!
     !! @authors   Robert Piessens, Elise de Doncker
-    !! @date      05 January 2017  \n
+    !! @date      07 January 2017  \n
     !!            11 September 2015
     !! @copyright GNU Public License v3
-    !! @todo      Improve the documentation of the function
+    !! @todo      Improve the documentation of the function. Why do we need this many input if they are not used?
     !!
     function dqwgtc ( x, c, p2, p3, p4, kp )
 
@@ -56,14 +56,14 @@ contains
 
         real    ( kind = 8 ), intent(in) :: x   !< input
         real    ( kind = 8 ), intent(in) :: c   !< input
-        real    ( kind = 8 ), intent(in) :: p2  !< input
-        real    ( kind = 8 ), intent(in) :: p3  !< input
-        real    ( kind = 8 ), intent(in) :: p4  !< input
-        integer ( kind = 4 ), intent(in) :: kp  !< input
+        real    ( kind = 8 ), intent(in) :: p2  !< input. Not used inside the function.
+        real    ( kind = 8 ), intent(in) :: p3  !< input. Not used inside the function.
+        real    ( kind = 8 ), intent(in) :: p4  !< input. Not used inside the function.
+        integer ( kind = 4 ), intent(in) :: kp  !< input. Not used inside the function.
 
         real    ( kind = 8 ) :: dqwgtc
 
-        dqwgtc = 0.1D+01 / ( x - c )
+        dqwgtc = 1.d0 / ( x - c )
 
         return
 

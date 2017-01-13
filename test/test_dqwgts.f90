@@ -14,7 +14,7 @@
 !----------------------------------------------------------------------------------------
 
 !
-! This program tests the dqwgtc function in both libraries
+! This program tests the dqwgts function in both libraries
 !
 
 program test
@@ -36,12 +36,12 @@ program test
     integer   ( kind = 4 ) :: arg_length
 
 #ifdef OLD
-    real      ( kind = 8 ) :: dqwgtc
-    external               :: dqwgtc
+    real      ( kind = 8 ) :: dqwgts
+    external               :: dqwgts
 #endif
 
-    real      ( kind = 8 ) :: x, c, p2, p3, p4, res, xmin, xmax
-    integer   ( kind = 4 ) :: kp, ind, num_points
+    real      ( kind = 8 ) :: x, a, b, alfa, beta, res, xmin, xmax
+    integer   ( kind = 4 ) :: integr, ind, num_points
 
     ! process the command line to get the test output:
     call get_command_argument( 1, length = arg_length )
@@ -56,17 +56,16 @@ program test
     end if
 
     ! print the header:
-    call header( 'dqwgtc tester' )
+    call header( 'dqwgts tester' )
 
     ! start the test:
     call start_test( outroot = arg )
 
     ! initialize the arguments:
-    c  = 1.d0
-    p2 = 1.d0
-    p3 = 1.d0
-    p4 = 1.d0
-    kp = 1
+    a      = 0.d0
+    b      = 1.d0
+    alfa   = 1.d0
+    beta   = 1.d0
 
     ! initialize the test:
     num_points = 100
@@ -74,12 +73,37 @@ program test
     xmax       = +10.d0
 
     ! call the function for different arguments:
+
+    integr = 0
+
     do ind=1, num_points
-
         x = xmin +REAL(ind-1)*(xmax-xmin)/REAL(num_points-1)
-        res = dqwgtc( x, c, p2, p3, p4, kp )
-        write( TEST_UNIT,* ) x, c, p2, p3, p4, kp, res
+        res = dqwgts ( x, a, b, alfa, beta, integr )
+        write( TEST_UNIT,* ) x, a, b, alfa, beta, integr, res
+    end do
 
+    integr = 1
+
+    do ind=1, num_points
+        x = xmin +REAL(ind-1)*(xmax-xmin)/REAL(num_points-1)
+        res = dqwgts ( x, a, b, alfa, beta, integr )
+        write( TEST_UNIT,* ) x, a, b, alfa, beta, integr, res
+    end do
+
+    integr = 2
+
+    do ind=1, num_points
+        x = xmin +REAL(ind-1)*(xmax-xmin)/REAL(num_points-1)
+        res = dqwgts ( x, a, b, alfa, beta, integr )
+        write( TEST_UNIT,* ) x, a, b, alfa, beta, integr, res
+    end do
+
+    integr = 3
+
+    do ind=1, num_points
+        x = xmin +REAL(ind-1)*(xmax-xmin)/REAL(num_points-1)
+        res = dqwgts ( x, a, b, alfa, beta, integr )
+        write( TEST_UNIT,* ) x, a, b, alfa, beta, integr, res
     end do
 
     ! end the test:
